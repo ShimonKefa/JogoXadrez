@@ -13,11 +13,12 @@ namespace jogoXadrez.Tabuleiro
             
         }
 
-        public Peca(Posicao posicao, Cor cor, tabuleiro tab)
+        public Peca(Cor cor, tabuleiro tab)
         {
-            this.posicao = posicao;
+            this.posicao = null;
             this.cor = cor;
             this.tab = tab;
+            this.QtdeMov = 0;
         }
     }
 }
