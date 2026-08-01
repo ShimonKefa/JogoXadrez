@@ -4,7 +4,7 @@ namespace jogoXadrez.Tabuleiro
     {
         public int Linhas {get; set;}
         public int Colunas{get; set;}
-        public Peca[,] pecas;
+        private Peca[,] pecas;
 
         public tabuleiro()
         {
@@ -16,7 +16,12 @@ namespace jogoXadrez.Tabuleiro
             this.Colunas = Colunas;
             pecas = new Peca[Linhas, Colunas];
         }
-
+        
+    public Peca p(int linha, int coluna)
+    {
+        return pecas[linha, coluna];
+    
+    }
     }
 }
 
