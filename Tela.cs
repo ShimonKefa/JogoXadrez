@@ -16,7 +16,11 @@ namespace jogoXadrez.Tela
                     {
                         System.Console.Write(" ");
                     }
-                    System.Console.Write(tab.p(i, j) + "-");
+                    else
+                    {
+                        System.Console.Write(tab.p(i, j) + "-");    
+                    }
+                    
                 }
                 System.Console.WriteLine();
             }
