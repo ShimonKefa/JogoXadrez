@@ -8,18 +8,13 @@ namespace jogoXadrez{
         static void Main(){
             try
             {
-            tabuleiro tab = new tabuleiro(8, 8);
-            tab.ColocarPeca(new Torre(Cor.Preto, tab) , new Posicao(0, 0));
-            tab.ColocarPeca(new Torre(Cor.Preto, tab) , new Posicao(0, 8));
-            //System.Console.WriteLine(p);
-            tela.PrintTab(tab);
+            PartidaXadrez part = new PartidaXadrez();
+            tela.PrintTab(part.tab);
             }
             catch (tabsException ex)
             {
                 System.Console.WriteLine(ex.Message);
-            }
-            //Posicao p = new Posicao(3, 4); 
-            
+            }            
             Console.ReadLine();
         }
     }

@@ -20,5 +20,10 @@ namespace jogoXadrez.Tabuleiro
             this.tab = tab;
             this.QtdeMov = 0;
         }
+
+        public void IncrementaQTDEMov()
+        {
+            QtdeMov++;
+        }
     }
 }
