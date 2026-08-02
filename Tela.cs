@@ -1,5 +1,6 @@
 using System.Text.Json;
 using jogoXadrez.Tabuleiro;
+using jogoXadrez.Xadrez;
 
 namespace jogoXadrez.Tela
 {
@@ -43,6 +44,15 @@ namespace jogoXadrez.Tela
                 System.Console.Write(peca);
                 Console.ForegroundColor = aux;                
             }
+        }
+
+        public static posicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1]+ "");
+            return new posicaoXadrez(coluna, linha);
+            
         }
     }
 }
