@@ -1,4 +1,5 @@
 using System.Runtime;
+using jogoXadrez.Tabuleiro;
 
 namespace jogoXadrez.Xadrez
 {
@@ -11,6 +12,10 @@ namespace jogoXadrez.Xadrez
         {
             this.coluna = coluna;
             this.linha = linha;
+        }
+        public Posicao ToPosicao()
+        {
+            return new Posicao(8 - linha, coluna - 'a'); 
         }
 
         public override string ToString()
