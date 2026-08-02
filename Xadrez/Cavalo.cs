@@ -2,16 +2,16 @@ using jogoXadrez.Tabuleiro;
 
 namespace jogoXadrez.Xadrez
 {
-    public class Rei : Peca
+    public class Cavalo : Peca
     {
-        public Rei(Cor cor, tabuleiro tab) : base(cor, tab)
+        public Cavalo(Cor cor, tabuleiro tab) : base(cor, tab)
         {
             
         }
 
         public override string ToString()
         {
-            return "r";
+            return "C";
         }
     }
 }
