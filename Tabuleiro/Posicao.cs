@@ -12,6 +12,12 @@ namespace jogoXadrez.Tabuleiro{
             Coluna = coluna;
         }
 
+        public void DefinirValores(int linha, int coluna)
+        {
+            Linha = linha;
+            Coluna = coluna;
+        }
+
         public override string ToString(){
             return $"{Linha},{Coluna}";
         }    

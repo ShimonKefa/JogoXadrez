@@ -40,7 +40,7 @@ namespace jogoXadrez.Tela
             else
             {
                 ConsoleColor aux = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 System.Console.Write(peca);
                 Console.ForegroundColor = aux;                
             }

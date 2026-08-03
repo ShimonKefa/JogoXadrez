@@ -8,6 +8,119 @@ namespace jogoXadrez.Xadrez
         {
             
         }
+        private bool PodeMover(Posicao pos)
+        {
+            Peca p = tab.peca(pos);
+            return p == null || p.cor != this.cor;
+        }
+        public override bool[,] MovimentosPossiveis()
+        {
+           bool[,] mat = new bool[tab.Linhas, tab.Colunas];
+            Posicao pos = new Posicao(0,0); 
+
+           //norte
+           pos.DefinirValores(posicao.Linha - 1, posicao.Coluna);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha--;
+            }
+            //nordeste
+            pos.DefinirValores(posicao.Linha - 1, posicao.Coluna + 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha--;
+                pos.Coluna++;
+            }
+
+            //leste
+            pos.DefinirValores(posicao.Linha, posicao.Coluna + 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Coluna++;
+            }
+
+             //Sudeste
+            pos.DefinirValores(posicao.Linha +1, posicao.Coluna + 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha++;
+                pos.Coluna++;
+            }
+
+            //sul
+            pos.DefinirValores(posicao.Linha + 1, posicao.Coluna);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha++;
+            }
+
+            //sudoeste
+            pos.DefinirValores(posicao.Linha + 1, posicao.Coluna - 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha++;
+                pos.Coluna--;
+            }
+
+            //Oeste
+            pos.DefinirValores(posicao.Linha, posicao.Coluna - 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Coluna--;
+            }
+
+            //noroeste
+            pos.DefinirValores(posicao.Linha - 1, posicao.Coluna - 1);
+            while (tab.PosicaoValidada(pos) && PodeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if(tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                {
+                    break;
+                }
+                pos.Linha--;
+                pos.Coluna--;
+            }
+
+
+            return mat;
+           
+        }
 
         public override string ToString()
         {
